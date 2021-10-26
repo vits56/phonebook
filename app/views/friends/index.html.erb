@@ -32,10 +32,15 @@
       <% end %>
     </tbody>
   </table>
+  
+  <br>
+  
+  <%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary" %>
 
   <br>
-
-  <%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary" %>
+  <br>
+  <br>
+  <%= paginate @friends %>
 <% else %>
   <h1>You need to sign in to see your friends</h1>
 <% end %>
