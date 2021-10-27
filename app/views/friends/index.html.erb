@@ -40,7 +40,16 @@
   <br>
   <br>
   <br>
-  <%= paginate @friends %>
+  
 <% else %>
   <h1>You need to sign in to see your friends</h1>
 <% end %>
+
+<% if user_signed_in?%>
+  <div class="container pagination justify-content-center" >
+    <%= paginate @friends , theme: 'bootstrap-5', pagination_class: "pagination-sm ",nav_class: "d-inline-block" %>
+  </div>
+<% end %>
+        
+    
+   
