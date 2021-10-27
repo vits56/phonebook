@@ -25,7 +25,8 @@ gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'bootstrap5-kaminari-views'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'prawn', '~> 2.4'
+gem 'prawn-table', '~> 0.2.2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise', '~> 4.8'
