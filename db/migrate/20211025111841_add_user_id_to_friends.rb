@@ -4,3 +4,4 @@ class AddUserIdToFriends < ActiveRecord::Migration[6.1]
     add_index :friends, :user_id
   end
 end
+
