@@ -5,9 +5,10 @@ class FriendsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :correct_user, only: %i[edit update destroy]
 
-  # GET /friends or /friends.json
+  # GET /friends
+  # GET /friends.json
   def index
-    @friends = Friend.order(:friend).page params[:page]
+    @friends = Friend.all
     respond_to do |format|
       format.html
       format.pdf do
@@ -17,7 +18,8 @@ class FriendsController < ApplicationController
     end
   end
 
-  # GET /friends/1 or /friends/1.json
+  # GET /friends/1
+  # GET /friends/1.json
   def show; end
 
   # GET /friends/new
@@ -29,7 +31,8 @@ class FriendsController < ApplicationController
   # GET /friends/1/edit
   def edit; end
 
-  # POST /friends or /friends.json
+  # POST /friends
+  # POST /friends.json
   def create
     # @friend = Friend.new(friend_params)
     @friend = current_user.friends.build(friend_params)
@@ -38,26 +41,28 @@ class FriendsController < ApplicationController
         format.html { redirect_to @friend, notice: 'Friend was successfully created.' }
         format.json { render :show, status: :created, location: @friend }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @friend.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /friends/1 or /friends/1.json
+  # PATCH/PUT /friends/1
+  # PATCH/PUT /friends/1.json
   def update
     respond_to do |format|
       if @friend.update(friend_params)
         format.html { redirect_to @friend, notice: 'Friend was successfully updated.' }
         format.json { render :show, status: :ok, location: @friend }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit }
         format.json { render json: @friend.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /friends/1 or /friends/1.json
+  # DELETE /friends/1
+  # DELETE /friends/1.json
   def destroy
     @friend.destroy
     respond_to do |format|
@@ -68,7 +73,7 @@ class FriendsController < ApplicationController
 
   def correct_user
     @friend = current_user.friends.find_by(id: params[:id])
-    redirect_to friends_path, notice: 'Not authorized to edit this friend' if @friend.nil?
+    redirect_to friends_path, notice: 'Not Authorized To Edit This Friend' if @friend.nil?
   end
 
   private
