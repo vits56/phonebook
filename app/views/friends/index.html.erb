@@ -44,8 +44,8 @@
   <%= link_to 'PDF file', friends_path(format:'pdf'), class: "btn btn-info" %>
   
 <% else %>
-
-<h1>Hello World!</h1>
-This is my first Rails Webpage...
+<div>
+  <%= render 'home/landing'%>
 
 <% end %>
+</div>
