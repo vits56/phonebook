@@ -8,13 +8,17 @@ class FriendPdf < Prawn::Document
   end
 
   def friend_id
-    table friend_id_all
+    table friend_id_all do
+      row(0).font_style = :bold
+      self.row_colors = %w[cccccc ffffff]
+      self.header = true
+    end
   end
 
   def friend_id_all
-    [%w[ID Name Email Phone Twitter]] +
+    [%w[Name Email Phone Twitter]] +
       @friend.map do |friend|
-        [friend.id, "#{friend.first_name}#{friend.last_name}", friend.email, friend.phone, friend.twitter]
+        ["#{friend.first_name} #{friend.last_name}", friend.email, friend.phone, friend.twitter]
       end
   end
 end

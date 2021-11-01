@@ -31,7 +31,7 @@
           
           
           <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
-          <%= link_to 'PDF file', friends_path(format:'pdf'), class: "btn btn-info" %>
+          
         </tr>
         <% end %>
       <% end %>
@@ -41,6 +41,7 @@
   <br>
 
   <%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary" %>
+  <%= link_to 'PDF file', friends_path(format:'pdf'), class: "btn btn-info" %>
   
 <% else %>
 
