@@ -8,7 +8,7 @@ class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
   def index
-    @friends = Friend.all
+    @friends = Friend.order(:name).page params[:page]
     respond_to do |format|
       format.html
       format.pdf do

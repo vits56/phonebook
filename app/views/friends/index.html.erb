@@ -38,10 +38,21 @@
     </tbody>
   </table>
 
+<div class= "text-center">
+ <%= paginate @friends, 
+              theme: 'bootstrap-5',
+              pagination_class: "pagination-sm",
+              nav_class: "d-inline-block" %>
+    
+</div>
   <br>
+
+                        
 
   <%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary" %>
   <%= link_to 'PDF file', friends_path(format:'pdf'), class: "btn btn-info" %>
+
+  
   
 <% else %>
 <div>
