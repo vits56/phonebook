@@ -1,24 +1,48 @@
-# README
+# Phonebook
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="phonebook.png" alt="exemplo imagem">
 
-Things you may want to cover:
+> Aplicação desenvolvida com rails 6, uma agenda telefônica que guarda nome, telefone, email e usuário do twitter e tem a opção de imprimir em pdf.
 
-* Ruby version
+## 💻 Pré-requisitos
 
-* System dependencies
+* Você tera que ter o git instalado na sua maquina.
+* Você instalou a versão  ` Ruby '3.0.2' | Rails '6.1.4'`. 
+* Você tem uma máquina `< Linux / Mac>`.
 
-* Configuration
+## 🚀 Instalando <Phonebook>
 
-* Database creation
+Clone este repositório:
+```
+git clone https://github.com/vits56/phonebook-heroku
+```
 
-* Database initialization
+Instale as Gems:
+```
+bundle
+```
 
-* How to run the test suite
+Instale  as dependências:
+```
+yarn install
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Migre o Banco de Dados:
+```
+rails db:migrate
+```
 
-* Deployment instructions
 
-* ...
+> ### Caso queira ver a aplicação no ar:
+> [Phonebook](https://github.com/vits56/phonebook-heroku)
+
+
+## License
+
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+
+Made with 💜 by <a href="https://github.com/vits56" target="_blank">Bruno Bastos Duarte</a>
+
+&#xa0;
+
+<a href="#top">Back to top</a>
